@@ -1,3 +1,4 @@
-module.exports = {
-    userSchema : require('./schema/User.js'),
+import userSchema from "./schema/User.js"
+export const models = {
+    userSchema
 }
