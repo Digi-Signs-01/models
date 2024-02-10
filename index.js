@@ -1,3 +1,3 @@
 module.exports = {
-    userSchema : require('./userSchema'),
+    userSchema : require('./schema/User.js'),
 }
