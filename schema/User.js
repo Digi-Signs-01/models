@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-const { userType } = require("../enums/User");
 const UserSchema = new mongoose.Schema({
     name: String,
     email: String,
@@ -14,8 +13,7 @@ const UserSchema = new mongoose.Schema({
     },
     role: {
         type: String,
-        enum: Object.values(userType),
-        default: userType.user,
+        default: "clientUser",
     },
     avatar: {
         type: String,
