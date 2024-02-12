@@ -1,19 +1,33 @@
 import mongoose from "mongoose";
-
+const { userType } = require("../enums/User");
 const UserSchema = new mongoose.Schema({
-    username: {
-        type: String,
-        required: true,
-        unique: true,
+    name: String,
+    email: String,
+    password: String,
+    date: {
+        type: Date,
+        default: Date.now,
     },
-    password: {
-        type: String,
-        required: true,
+    phone : {
+        type : String,
+        default : ""
     },
-    email: {
+    role: {
         type: String,
-        required: true,
-        unique: true,
+        enum: Object.values(userType),
+        default: userType.user,
+    },
+    avatar: {
+        type: String,
+        default: "",
+    },
+    screensAllowed : {
+        type : [String],
+        default : []
+    },
+    screenGroupsAllowed : {
+        type : [String],
+        default : []
     },
 });
 
